@@ -9,8 +9,8 @@ import org.testng.annotations.Test;
 public class LoginTests extends TestBase {
 
     @BeforeMethod
-    public void preCondition(){
-        if (app.getHelperUser().isLogged()){
+    public void preCondition() {
+        if (app.getHelperUser().isLogged()) {
             app.getHelperUser().logout();
         }
     }
@@ -21,7 +21,7 @@ public class LoginTests extends TestBase {
         app.getHelperUser().fillLoginForm("romaabc@maile.com", "Abcd1234$");
         app.getHelperUser().submitLogin();
         //Assert if element with text "Logged in success" is present
-        Assert.assertEquals(app.getHelperUser().getMessage(),"Logged in success");
+        Assert.assertEquals(app.getHelperUser().getMessage(), "Logged in success");
         //app.getHelperUser().clickOKButton();
     }
 
@@ -32,7 +32,7 @@ public class LoginTests extends TestBase {
         app.getHelperUser().openLoginForm();
         app.getHelperUser().fillLoginForm(user);
         app.getHelperUser().submitLogin();
-        Assert.assertEquals(app.getHelperUser().getMessage(),"Logged in success");
+        Assert.assertEquals(app.getHelperUser().getMessage(), "Logged in success");
 
     }
 
@@ -41,7 +41,7 @@ public class LoginTests extends TestBase {
         app.getHelperUser().openLoginForm();
         app.getHelperUser().fillLoginForm("romaabc@maile.com", "Abcd1234$");
         app.getHelperUser().submitLogin();
-        Assert.assertEquals(app.getHelperUser().getMessage(),"Logged in success");
+        Assert.assertEquals(app.getHelperUser().getMessage(), "Logged in success");
 
     }
 
@@ -57,7 +57,7 @@ public class LoginTests extends TestBase {
     }
 
     @AfterMethod
-    public void postCondition(){
+    public void postCondition() {
         app.getHelperUser().clickOKButton();
     }
 

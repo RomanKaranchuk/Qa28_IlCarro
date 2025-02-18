@@ -2,6 +2,7 @@ package manager;
 
 import models.User;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -32,11 +33,7 @@ public class HelperUser extends HelperBase {
     }
 
     public String getMessage() {
-//        WebElement element = wd.findElement(By.cssSelector(".dialog-container>h2"));
-//        String text = element.getText();
-//        return text;
-        //pause(2000);
-        return wd.findElement(By.cssSelector(".dialog-container>h2")).getText();
+        return null;
     }
 
     public void clickOKButton() {
@@ -49,6 +46,41 @@ public class HelperUser extends HelperBase {
 
 
     public void logout() {
+
         click(By.xpath("//*[text()= ' Logout ']"));
+    }
+
+    public String getErrorText() {
+
+        return wd.findElement(By.cssSelector("div.error")).getText();
+    }
+
+    public void openRegistrationForm() {
+
+        click(By.xpath("//*[text()=' Sign up ']"));
+    }
+
+    public void fillRegistrationForm(User user) {
+        type(By.id("name"), user.getFirsName());
+        type(By.id("lastName"), user.getLastName());
+        type(By.id("email"), user.getEmail());
+        type(By.id("password"), user.getPassword());
+
+    }
+
+    public void checkPolicy() {
+        //  click(By.id("terms-of-use"));
+        //click(By.cssSelector("label[for='terms-of-use']"));
+
+        //variant 2
+
+        JavascriptExecutor js = (JavascriptExecutor) wd;
+        js.executeScript("document.querySelector('#terms-of-use').click();");
+    }
+
+    public void clickOkButton() {
+    }
+
+    public void submit() {
     }
 }
