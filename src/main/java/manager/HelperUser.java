@@ -1,10 +1,8 @@
 package manager;
 
 import models.User;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 
 public class HelperUser extends HelperBase {
 
@@ -28,16 +26,13 @@ public class HelperUser extends HelperBase {
         type(By.id("password"), user.getPassword());
     }
 
-    public void submitLogin() {
-        click(By.xpath("//button[@type='submit']"));
-    }
 
-    public String getMessage() {
-        return null;
-    }
 
-    public void clickOKButton() {
-        click(By.xpath("//button[text()='Ok']"));
+
+
+    public void clickOkButton() {
+        if (isElementPresent(By.xpath("//button[text()='Ok']")))
+            click(By.xpath("//button[text()='Ok']"));
     }
 
     public boolean isLogged() {
@@ -46,17 +41,17 @@ public class HelperUser extends HelperBase {
 
 
     public void logout() {
-
         click(By.xpath("//*[text()= ' Logout ']"));
     }
 
     public String getErrorText() {
-
         return wd.findElement(By.cssSelector("div.error")).getText();
     }
 
-    public void openRegistrationForm() {
 
+    //*********************************Regstration********************
+
+    public void openRegistrationForm() {
         click(By.xpath("//*[text()=' Sign up ']"));
     }
 
@@ -69,18 +64,35 @@ public class HelperUser extends HelperBase {
     }
 
     public void checkPolicy() {
-        //  click(By.id("terms-of-use"));
-        //click(By.cssSelector("label[for='terms-of-use']"));
 
-        //variant 2
+        if (!wd.findElement(By.id("terms-of-use")).isSelected()) {
+            //  click(By.id("terms-of-use"));
+            //click(By.cssSelector("label[for='terms-of-use']"));
 
-        JavascriptExecutor js = (JavascriptExecutor) wd;
-        js.executeScript("document.querySelector('#terms-of-use').click();");
+            //variant 2
+
+            JavascriptExecutor js = (JavascriptExecutor) wd;
+            js.executeScript("document.querySelector('#terms-of-use').click();");
+        }
+
     }
 
-    public void clickOkButton() {
+    public void checkPolicyXY(){
+        WebElement label = wd.findElement(By.cssSelector("label[for='terms-of-use']"));
+        Rectangle rectangle = label.getRect();
+        int w =  rectangle.getWidth();
+        int xOffset = -w/2;
+
+        //Dimension size = wd.manage().window().getSize();
+
+        Actions actions = new Actions(wd);
+        actions.moveToElement(label,xOffset,0).click().release().perform();
     }
 
-    public void submit() {
+    public void login(User user) {
+        openLoginForm();
+        fillLoginForm(user);
+        submit();
+        clickOkButton();
     }
 }

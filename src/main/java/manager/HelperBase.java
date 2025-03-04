@@ -21,10 +21,17 @@ public class HelperBase {
         WebElement element = wd.findElement(locator);
         element.click();
         element.clear();
+        clearNew(element);
         if (text !=null){
             element.sendKeys(text);
         }
     }
+
+    public void clearNew(WebElement element){
+        element.sendKeys(" ");
+        element.sendKeys(Keys.BACK_SPACE);
+    }
+
 
     public void pause(int time){
         try {
@@ -38,4 +45,25 @@ public class HelperBase {
         return wd.findElements(locator).size()>0;
     }
 
+
+    public boolean isYallaButtonNotActive() {
+        boolean res = isElementPresent(By.cssSelector("button[disabled]"));
+
+        WebElement element = wd.findElement(By.cssSelector("button[type='submit']"));
+        boolean result = element.isEnabled();
+
+        return res && !result;
+    }
+
+    public void submit() {
+        click(By.xpath("//button[@type='submit']"));
+    }
+
+    public String getMessage() {
+//        WebElement element = wd.findElement(By.cssSelector(".dialog-container>h2"));
+//        String text = element.getText();
+//        return text;
+        //pause(2000);
+        return wd.findElement(By.cssSelector(".dialog-container>h2")).getText();
+    }
 }
