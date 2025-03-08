@@ -1,0 +1,10 @@
+18:20:41.242 INFO  manager.ApplicationManager -- All tests run in Chrome Browser
+18:20:43.538 INFO  manager.ApplicationManager -- The link--->https://ilcarro.web.app/search
+18:20:48.640 INFO  tests.RegistrationTests -- Test start with test data --->User{firsName='Misha', lastName='Slava', email='', password='Slava123456$'}
+18:21:00.741 INFO  tests.RegistrationTests -- Test start with test data --->User{firsName='Lisa', lastName='', email='slava@gmail.com', password='Slava123456$'}
+18:21:12.460 INFO  tests.RegistrationTests -- Test start with test data --->User{firsName='', lastName='Slava', email='slava@gmail.com', password='Snow123456$'}
+18:21:24.708 INFO  tests.RegistrationTests -- Test start with test data --->User{firsName='Misha', lastName='Slava', email='slava@gmail.com', password=''}
+18:21:36.880 INFO  tests.RegistrationTests -- Test start with test data --->User{firsName='Misha', lastName='Slava', email='romaabc@maile.com', password='Abcd1234$'}
+18:21:45.046 INFO  tests.RegistrationTests -- Test start with test data --->User{firsName='Misha', lastName='Slava', email='Slava@gmail.com', password='Slava123456$'}
+18:22:14.339 INFO  tests.RegistrationTests -- Test start with test data --->User{firsName='Misha', lastName='Slava', email='slavgmail.com', password='Slava123456$'}
+18:22:26.505 INFO  tests.RegistrationTests -- Test start with test data --->User{firsName='Misha', lastName='Slava', email='slava@gmail.com', password='Snow123'}

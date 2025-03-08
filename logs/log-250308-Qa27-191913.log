@@ -1,0 +1,17 @@
+19:19:14.998 INFO  manager.ApplicationManager -- All tests run in Chrome Browser
+19:19:17.081 INFO  manager.ApplicationManager -- The link--->https://ilcarro.web.app/search
+19:19:28.336 INFO  tests.AddNewCarTests -- Logout complete
+19:19:28.415 INFO  tests.AddNewCarTests -- Test start with test data --->Car(location=Tel Aviv, Israel, manufacture=Mazda, model=M3, year=2024, fuel=Petrol, seats=4, carClass=C, carRegNum=678-900-1168, price=50.0, about=My car)
+19:19:43.041 INFO  tests.LoginTests -- Test start with test data ---> email : ' ' & password : 'Abcd1234$'
+19:19:54.338 INFO  tests.LoginTests -- Test start with test data ---> email : 'romaabc@maile.com' & password : ''
+19:20:05.613 INFO  tests.LoginTests -- Test start with test data ---> email : 'marga@gmail.com' & password : 'Mmar123456$'
+19:20:20.621 INFO  tests.LoginTests -- Test start with test data ---> email : 'maaa@gmail.com' & password : 'Maa123456$'
+19:20:28.761 INFO  tests.LoginTests -- Test start with test data ---> email : 'marga@gmail.com' & password : 'Mmar123'
+19:20:35.224 INFO  tests.RegistrationTests -- Test start with test data --->User{firsName='Misha', lastName='Slava', email='', password='Slava123456$'}
+19:20:47.258 INFO  tests.RegistrationTests -- Test start with test data --->User{firsName='Lisa', lastName='', email='slava@gmail.com', password='Slava123456$'}
+19:20:59.503 INFO  tests.RegistrationTests -- Test start with test data --->User{firsName='', lastName='Slava', email='slava@gmail.com', password='Snow123456$'}
+19:21:11.484 INFO  tests.RegistrationTests -- Test start with test data --->User{firsName='Misha', lastName='Slava', email='slava@gmail.com', password=''}
+19:21:23.661 INFO  tests.RegistrationTests -- Test start with test data --->User{firsName='Misha', lastName='Slava', email='romaabc@maile.com', password='Abcd1234$'}
+19:21:31.382 INFO  tests.RegistrationTests -- Test start with test data --->User{firsName='Misha', lastName='Slava', email='Slava@gmail.com', password='Slava123456$'}
+19:22:00.679 INFO  tests.RegistrationTests -- Test start with test data --->User{firsName='Misha', lastName='Slava', email='slavgmail.com', password='Slava123456$'}
+19:22:12.872 INFO  tests.RegistrationTests -- Test start with test data --->User{firsName='Misha', lastName='Slava', email='slava@gmail.com', password='Snow123'}

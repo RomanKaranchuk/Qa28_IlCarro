@@ -1,12 +1,18 @@
 package tests;
 
 import models.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+
+
+
 public class LoginTests extends TestBase {
+    Logger logger = LoggerFactory.getLogger(LoginTests.class);
 
     @BeforeMethod
     public void preCondition() {
@@ -17,9 +23,10 @@ public class LoginTests extends TestBase {
 
     @Test
     public void loginSuccess() {
+        logger.info("Test start with test data --->" + " email : 'marga@gmail.com' & password : 'Mmar123456$'");
         app.getHelperUser().openLoginForm();
         app.getHelperUser().fillLoginForm("romaabc@maile.com", "Abcd1234$");
-        app.getHelperUser().submitLogin();
+        app.getHelperUser().submit();
         //Assert if element with text "Logged in success" is present
         Assert.assertEquals(app.getHelperUser().getMessage(), "Logged in success");
         //app.getHelperUser().clickOKButton();
@@ -31,7 +38,7 @@ public class LoginTests extends TestBase {
 
         app.getHelperUser().openLoginForm();
         app.getHelperUser().fillLoginForm(user);
-        app.getHelperUser().submitLogin();
+        app.getHelperUser().submit();
         Assert.assertEquals(app.getHelperUser().getMessage(), "Logged in success");
 
     }
@@ -40,7 +47,7 @@ public class LoginTests extends TestBase {
     public void loginSuccessModel() {
         app.getHelperUser().openLoginForm();
         app.getHelperUser().fillLoginForm("romaabc@maile.com", "Abcd1234$");
-        app.getHelperUser().submitLogin();
+        app.getHelperUser().submit();
         Assert.assertEquals(app.getHelperUser().getMessage(), "Logged in success");
 
     }
@@ -51,7 +58,7 @@ public class LoginTests extends TestBase {
 
         app.getHelperUser().openLoginForm();
         app.getHelperUser().fillLoginForm(user);
-        app.getHelperUser().submitLogin();
+        app.getHelperUser().submit();
         //Assert.assertEquals(app.getHelperUser().getMessage(),"Logged in success");
 
     }
@@ -106,7 +113,7 @@ public class LoginTests extends TestBase {
 
     @AfterMethod
     public void postCondition() {
-        app.getHelperUser().clickOKButton();
+        app.getHelperUser().clickOkButton();
     }
 
 }

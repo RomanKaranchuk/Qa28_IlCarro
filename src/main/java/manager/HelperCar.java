@@ -106,5 +106,42 @@ public class HelperCar extends HelperBase {
 
         }
     }
+    public void searchAnyPeriod(String city, String dateFrom, String dateTo) {
+        typeCity(city);
+        clearTextBox(By.id("dates"));
+        click(By.id("dates"));
+
+        LocalDate now = LocalDate.now();
+        LocalDate from = LocalDate.parse(dateFrom, DateTimeFormatter.ofPattern("M/d/yyyy"));
+        LocalDate to = LocalDate.parse(dateTo,DateTimeFormatter.ofPattern("M/d/yyyy"));
+
+        int diffYear;
+        int diffMonth;
+        ///**from
+        diffYear = from.getYear()- now.getYear();
+        if(diffYear==0){ //2025=2025
+            diffMonth = from.getMonthValue() - now.getMonthValue();//10-3=7
+        }else //2025!=2026
+            diffMonth = 12-now.getMonthValue()+from.getMonthValue(); //12-3+2=11
+
+        clickNextMonthBtn(diffMonth);
+        String locator = String.format("//div[text()= ' %s ']",from.getDayOfMonth());
+        click(By.xpath(locator));
+
+        ///**to
+        diffYear = to.getYear()-from.getYear();
+        if (diffYear==0) {
+            diffMonth = to.getMonthValue() - from.getMonthValue();
+        }else
+            diffMonth = 12- from.getMonthValue()+ to.getMonthValue();
+        clickNextMonthBtn(diffMonth);
+
+        locator = String.format("//div[text()= ' %s ']",to.getDayOfMonth());
+        click(By.xpath(locator));
+    }
+
+    public void navigateByLogo() {
+        click(By.cssSelector("a.logo"));
+    }
 
 }

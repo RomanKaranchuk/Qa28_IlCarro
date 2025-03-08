@@ -1,0 +1,8 @@
+19:16:57.454 INFO  manager.ApplicationManager -- All tests run in Chrome Browser
+19:16:59.564 INFO  manager.ApplicationManager -- The link--->https://ilcarro.web.app/search
+19:17:20.538 INFO  tests.AddNewCarTests -- Logout complete
+19:17:20.601 INFO  tests.AddNewCarTests -- Test start with test data --->Car(location=Tel Aviv, Israel, manufacture=Mazda, model=M3, year=2024, fuel=Petrol, seats=4, carClass=C, carRegNum=678-900-1040, price=50.0, about=My car)
+19:17:44.984 INFO  tests.LoginTests -- Test start with test data ---> email : ' ' & password : 'Abcd1234$'
+19:18:06.354 INFO  tests.LoginTests -- Test start with test data ---> email : 'romaabc@maile.com' & password : ''
+19:18:27.773 INFO  tests.LoginTests -- Test start with test data ---> email : 'marga@gmail.com' & password : 'Mmar123456$'
+19:18:52.646 INFO  tests.LoginTests -- Test start with test data ---> email : 'maaa@gmail.com' & password : 'Maa123456$'

@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class AddNewCarTests extends TestBase{
+    private static final Logger logger = LoggerFactory.getLogger(AddNewCarTests.class);
 
     @BeforeClass
     public void preCondition(){
